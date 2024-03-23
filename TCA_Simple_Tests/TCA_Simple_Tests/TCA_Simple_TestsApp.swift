@@ -12,11 +12,14 @@ import SwiftUI
 struct TCA_Simple_TestsApp: App {
     static let store = Store(initialState: AppFeature.State()) {
         AppFeature()
+            ._printChanges()
     }
     
     var body: some Scene {
         WindowGroup {
-            AppView(store: TCA_Simple_TestsApp.store)
+            AppView(
+                store: TCA_Simple_TestsApp.store
+            )
         }
     }
 }

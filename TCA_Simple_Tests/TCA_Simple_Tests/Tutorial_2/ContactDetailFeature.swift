@@ -6,15 +6,15 @@
 //
 
 import ComposableArchitecture
-import Foundation
 
 @Reducer
 struct ContactDetailFeature {
+    @ObservableState
     struct State: Equatable {
-        @PresentationState var alert: AlertState<Action.Alert>?
+        @Presents var alert: AlertState<Action.Alert>?
+        
         let contact: Contact
     }
-    
     enum Action {
         case alert(PresentationAction<Alert>)
         case delegate(Delegate)
